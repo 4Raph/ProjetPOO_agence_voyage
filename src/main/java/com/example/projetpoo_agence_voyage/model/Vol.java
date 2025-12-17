@@ -12,7 +12,12 @@ public class Vol implements Prix{
 
     @Override
     public void CalculPrix() {
-
+        if (this.typeClasse == "Business"){
+            this.prixPassager += 100;
+        }
+        if (this.typeClasse == "Premier"){
+            this.prixPassager += 50;
+        }
     }
 
 

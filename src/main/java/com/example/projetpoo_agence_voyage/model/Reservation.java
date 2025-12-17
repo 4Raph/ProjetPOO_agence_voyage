@@ -11,10 +11,13 @@ public class Reservation {
 
 
     public void CalculPrixTotal(Hotel hotel, Vol vol, Sejour sejour){
-        this.prixTotal = this.prixTotal + (this.nbPersonne/2) * hotel.getPrixChambre() * sejour.getDuree();
-        this.prixTotal = this.prixTotal + this.nbPersonne * vol.getPrixPassager();
-        IO.println("Prix de votre réservation : " + this.prixTotal);
+        this.prixTotal += hotel.getPrixChambre()* sejour.getDuree() + vol.getPrixPassager();
     }
+
+    public void CalculPrixTotal(Hotel hotel, Vol vol, Circuit circuit){
+        this.prixTotal += hotel.getPrixChambre()* circuit.getDuree() + vol.getPrixPassager();
+    }
+
 
     public void AffichageReservation(Client client){
         IO.println("La réservation pour " + client.getNom()+ ", avec" + this.nbPersonne + " personne(s) à bien été effectuer !");
