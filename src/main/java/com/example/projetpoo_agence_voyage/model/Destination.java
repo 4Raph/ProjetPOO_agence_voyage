@@ -5,8 +5,10 @@ public class Destination {
     private String continent;
 
 
-
-
+    public Destination(String lieu, String continent){
+        this.lieu = lieu;
+        this.continent = continent;
+    }
 
     //Getter et setter
     public String getLieu() {
@@ -25,8 +27,4 @@ public class Destination {
         this.continent = continent;
     }
 
-    public Destination(String lieu, String continent){
-        this.lieu = lieu;
-        this.continent = continent;
-    }
 }
