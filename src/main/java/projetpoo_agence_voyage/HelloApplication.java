@@ -1,4 +1,4 @@
-package com.example.projetpoo_agence_voyage;
+package projetpoo_agence_voyage;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

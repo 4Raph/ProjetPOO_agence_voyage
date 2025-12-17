@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.example.projetpoo_agence_voyage/com.example.projetpoo_agence_voyage.HelloApplication
+                                com.example.projetpoo_agence_voyage/projetpoo_agence_voyage.HelloApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

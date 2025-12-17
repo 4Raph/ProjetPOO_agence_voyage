@@ -1,4 +1,4 @@
-package com.example.projetpoo_agence_voyage.model;
+package projetpoo_agence_voyage.model;
 
 public class Hotel extends Destination implements Prix{
     private String nom;
