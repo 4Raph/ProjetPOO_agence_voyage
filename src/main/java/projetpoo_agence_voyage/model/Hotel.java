@@ -24,34 +24,42 @@ public class Hotel extends Destination implements Prix{
 
     //getter et setter
     public String getNom() {
+
         return nom;
     }
 
     public void setNom(String nom) {
+
         this.nom = nom;
     }
 
     public double getPrixChambre() {
+
         return prixChambre;
     }
 
     public void setPrixChambre(double prixChambre) {
+
         this.prixChambre = prixChambre;
     }
 
     public boolean isPiscine() {
+
         return piscine;
     }
 
     public void setPiscine(boolean piscine) {
+
         this.piscine = piscine;
     }
 
     public int getNbEtoiles() {
+
         return nbEtoiles;
     }
 
     public void setNbEtoiles(int nbEtoiles) {
+
         this.nbEtoiles = nbEtoiles;
     }
 }

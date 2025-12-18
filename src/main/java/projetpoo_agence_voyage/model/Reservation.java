@@ -18,18 +18,22 @@ public class Reservation {
 
     //Getter et setter
     public double getPrixTotal() {
+
         return prixTotal;
     }
 
     public void setPrixTotal(double prixTotal) {
+
         this.prixTotal = prixTotal;
     }
 
     public double getNbPersonne() {
+
         return nbPersonne;
     }
 
     public void setNbPersonne(double nbPersonne) {
+
         this.nbPersonne = nbPersonne;
     }
 }

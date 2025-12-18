@@ -15,26 +15,32 @@ public abstract class Voyage {
 
     //getter et setter
     public int getDuree() {
+
         return duree;
     }
 
     public void setDuree(int duree) {
+
         this.duree = duree;
     }
 
     public Hotel getHotel() {
+
         return hotel;
     }
 
     public void setHotel(Hotel hotel) {
+
         this.hotel = hotel;
     }
 
     public Vol getVol() {
+
         return vol;
     }
 
     public void setVol(Vol vol) {
+
         this.vol = vol;
     }
 }

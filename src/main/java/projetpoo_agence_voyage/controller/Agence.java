@@ -12,6 +12,7 @@ public class Agence {
 
     @FXML private TextField nomClientField;
     @FXML private TextField nbPersonnesField;
+    @FXML private TextField nbJours;
     @FXML private RadioButton rbSejour;
     @FXML private RadioButton rbCircuit;
     @FXML private CheckBox cbPiscine;
@@ -29,6 +30,7 @@ public class Agence {
     private void viderFormulaire() {
         nomClientField.clear();
         nbPersonnesField.clear();
+        nbJours.clear();
         rbSejour.setSelected(true);
         cbPiscine.setSelected(false);
         cbEtoiles.getSelectionModel().clearSelection();
@@ -41,7 +43,7 @@ public class Agence {
     public void initialize() {
         cbEtoiles.getItems().addAll(0, 3, 5);
         cbContinent.getItems().addAll("Europe", "Amerique", "Asie", "Afrique");
-        cbTypeVol.getItems().addAll("Economie", "Business", "Premiere");
+        cbTypeVol.getItems().addAll("Economie", "Premiere", "Business");
 
         construireHotels();
 
@@ -53,7 +55,7 @@ public class Agence {
                     setText(null);
                 } else {
                     setText(item.getNom() + " - " + item.getLieu()
-                            + " (" + item.getNbEtoiles() + "étoiles, piscine: "
+                            + " (" + item.getNbEtoiles() + " étoiles ☆ , piscine: "
                             + (item.isPiscine() ? "oui" : "non") + ", "
                             + item.getContinent() + ")");
                 }
@@ -112,7 +114,7 @@ public class Agence {
         }
 
         if (listeHotels.getItems().isEmpty()) {
-            resultLabel.setText("Aucun hôtel ne correspond aux critères.");
+            resultLabel.setText("Aucun hôtel ne correspond aux critères");
         } else {
             resultLabel.setText("");
         }
@@ -123,14 +125,15 @@ public class Agence {
         try {
             String nom = nomClientField.getText();
             int nb = Integer.parseInt(nbPersonnesField.getText());
+            int nbJ = Integer.parseInt(nbJours.getText());
             if (nom == null || nom.isBlank()) {
-                resultLabel.setText("Entre un nom de client.");
+                resultLabel.setText("Entre un nom de client");
                 return;
             }
 
             String typeVol = cbTypeVol.getValue();
             if (typeVol == null) {
-                resultLabel.setText("Choisis un type de vol.");
+                resultLabel.setText("Choisis un type de vol");
                 return;
             }
 
@@ -143,22 +146,22 @@ public class Agence {
             if (rbSejour.isSelected()) {
                 Hotel hotelChoisi = listeHotels.getSelectionModel().getSelectedItem();
                 if (hotelChoisi == null) {
-                    resultLabel.setText("Choisis un hôtel pour le séjour.");
+                    resultLabel.setText("Choisis un hôtel pour le séjour");
                     return;
                 }
-                Sejour sejour = new Sejour(5, hotelChoisi, vol);
+                Sejour sejour = new Sejour(nbJ, hotelChoisi, vol);
                 reservation.calculPrixTotal(sejour);
             } else if (rbCircuit.isSelected()) {
                 String continent = cbContinent.getValue();
                 if (continent == null) {
-                    resultLabel.setText("Choisis un continent pour le circuit.");
+                    resultLabel.setText("Choisis un continent pour le circuit");
                     return;
                 }
 
                 Circuit circuit = new Circuit("Circuit " + continent);
                 int max = Math.min(3, listeHotels.getItems().size());
                 if (max == 0) {
-                    resultLabel.setText("Aucun hôtel pour construire le circuit.");
+                    resultLabel.setText("Aucun hôtel pour construire le circuit");
                     return;
                 }
                 for (int i = 0; i < max; i++) {
@@ -175,7 +178,7 @@ public class Agence {
             viderFormulaire();
 
         } catch (NumberFormatException e) {
-            resultLabel.setText("Nombre de personnes invalide.");
+            resultLabel.setText("Nombre de personnes invalide / durée invalide");
         }
     }
 }

@@ -12,14 +12,17 @@ public class Destination {
 
     //Getter et setter
     public String getLieu() {
+
         return lieu;
     }
 
     public void setLieu(String lieu) {
+
         this.lieu = lieu;
     }
 
     public String getContinent() {
+
         return continent;
     }
 

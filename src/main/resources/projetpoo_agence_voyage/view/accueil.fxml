@@ -25,6 +25,7 @@
                     <children>
                         <TextField fx:id="nomClientField" promptText="Nom du client" />
                         <TextField fx:id="nbPersonnesField" promptText="Nombre de personnes" />
+                        <TextField fx:id="nbJours" promptText="Durée du voyage" />
                     </children>
                 </HBox>
 

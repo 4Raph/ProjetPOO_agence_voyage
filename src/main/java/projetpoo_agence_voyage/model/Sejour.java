@@ -4,6 +4,7 @@ public class Sejour extends Voyage{
 
 
     public Sejour(int duree, Hotel hotel, Vol vol) {
+
         super(duree, hotel, vol);
     }
 
