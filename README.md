@@ -37,6 +37,10 @@ Osmont Raphaël, Bobin Junca Nils, Lafontaine Paul
 - Interface `Prix` pour le calcul de prix.
 - `Agence`pour la connexion avec JavaFX et la POO
 
+## Diagramme UML
+
+![Diagramme UML](image/DiagrammeULM.png)
+
 ## Lancement du projet
 
 1. Importer le projet Maven dans IntelliJ IDEA.
