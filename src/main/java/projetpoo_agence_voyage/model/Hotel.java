@@ -6,12 +6,12 @@ public class Hotel extends Destination implements Prix{
     private boolean piscine;
     private double prixChambre;
 
-    public Hotel(String nom, int nbEtoiles, boolean piscine, boolean handicap, String lieu, String continent){
+    public Hotel(String nom, int nbEtoiles, boolean piscine, String lieu, String continent){
         super(lieu, continent);
         this.nom = nom;
         this.nbEtoiles = nbEtoiles;
         this.piscine = piscine;
-        this.prixChambre = 15;
+        this.prixChambre = 30;
     }
     @Override
     public void CalculPrix(){

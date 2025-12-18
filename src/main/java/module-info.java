@@ -4,6 +4,8 @@ module com.example.projetpoo_agence_voyage {
     requires jdk.sctp;
 
 
-    opens projetpoo_agence_voyage to javafx.fxml;
-    exports projetpoo_agence_voyage;
+    opens projetpoo_agence_voyage.controller to javafx.fxml;
+    exports projetpoo_agence_voyage.controller;
+    exports projetpoo_agence_voyage.view;
+    opens projetpoo_agence_voyage.view to javafx.fxml;
 }

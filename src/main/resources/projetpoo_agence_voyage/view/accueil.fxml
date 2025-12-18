@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="projetpoo_agence_voyage.controller.Agence">
+
+    <top>
+        <Label text="Agence de voyage" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+        </Label>
+    </top>
+
+    <center>
+        <VBox spacing="10" style="-fx-padding: 10;">
+            <children>
+
+
+                <HBox spacing="10" style="-fx-padding: 10;">
+                    <children>
+                        <TextField fx:id="nomClientField" promptText="Nom du client" />
+                        <TextField fx:id="nbPersonnesField" promptText="Nombre de personnes" />
+                    </children>
+                </HBox>
+
+
+                <TitledPane text="Type de voyage">
+                    <content>
+                        <HBox spacing="20" style="-fx-padding: 10;">
+                            <children>
+
+                                <fx:define>
+                                    <ToggleGroup fx:id="typeVoyageGroupe"/>
+                                </fx:define>
+
+                                <RadioButton fx:id="rbSejour" text="Séjour"
+                                             toggleGroup="$typeVoyageGroupe" selected="true"/>
+                                <RadioButton fx:id="rbCircuit" text="Circuit"
+                                             toggleGroup="$typeVoyageGroupe"/>
+                            </children>
+                        </HBox>
+                    </content>
+                </TitledPane>
+
+
+                <TitledPane text="Options Séjour">
+                    <content>
+                        <HBox spacing="20" style="-fx-padding: 15;">
+                            <children>
+                                <CheckBox fx:id="cbPiscine" text="Piscine"/>
+                                <Label text="Nombre d'étoiles :"/>
+                                <ComboBox fx:id="cbEtoiles" prefWidth="120"/>
+                            </children>
+                        </HBox>
+                    </content>
+                </TitledPane>
+
+
+                <TitledPane text="Options Circuit">
+                    <content>
+                        <HBox spacing="20" style="-fx-padding: 10;">
+                            <children>
+                                <Label text="Continent:"/>
+                                <ComboBox fx:id="cbContinent" prefWidth="150"/>
+                            </children>
+                        </HBox>
+                    </content>
+                </TitledPane>
+
+
+                <HBox spacing="10" style="-fx-padding: 10;">
+                    <children>
+                        <Label text="Type de vol:"/>
+                        <ComboBox fx:id="cbTypeVol" prefWidth="150"/>
+                    </children>
+                </HBox>
+
+
+                <HBox spacing="10" style="-fx-padding: 10;">
+                    <children>
+                        <Button text="Chercher hôtels" onAction="#onChercherHotels"/>
+                        <Button text="Réserver" onAction="#onReserver"/>
+                    </children>
+                </HBox>
+
+                <Label text="Hôtels disponibles :"/>
+                <ListView fx:id="listeHotels" prefHeight="200"/>
+
+                <Label fx:id="resultLabel" style="-fx-font-weight: bold;"/>
+
+            </children>
+        </VBox>
+    </center>
+</BorderPane>
