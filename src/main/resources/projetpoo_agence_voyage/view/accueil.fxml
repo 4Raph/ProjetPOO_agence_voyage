@@ -84,7 +84,7 @@
                 <HBox spacing="10" style="-fx-padding: 10;">
                     <children>
                         <Button text="Chercher hôtels" onAction="#onChercherHotels"/>
-                        <Button text="Réserver" onAction="#onReserver"/>
+                        <Button text="Réserver" onAction="#onReserve"/>
                     </children>
                 </HBox>
 
@@ -92,6 +92,9 @@
                 <ListView fx:id="listeHotels" prefHeight="200"/>
 
                 <Label fx:id="resultLabel" style="-fx-font-weight: bold;"/>
+
+                <Label text="Liste clients :"/>
+                <ListView fx:id="listeClients" prefHeight="200"/>
 
             </children>
         </VBox>

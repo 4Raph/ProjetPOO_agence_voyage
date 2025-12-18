@@ -20,9 +20,22 @@ public class Agence {
     @FXML private ComboBox<String> cbTypeVol;
     @FXML private ListView<Hotel> listeHotels;
     @FXML private Label resultLabel;
+    @FXML private ListView<String> listeClients;
 
     private final List<Client> clients = new ArrayList<>();
     private final List<Hotel> tousLesHotels = new ArrayList<>();
+
+
+    private void viderFormulaire() {
+        nomClientField.clear();
+        nbPersonnesField.clear();
+        rbSejour.setSelected(true);
+        cbPiscine.setSelected(false);
+        cbEtoiles.getSelectionModel().clearSelection();
+        cbContinent.getSelectionModel().clearSelection();
+        cbTypeVol.getSelectionModel().clearSelection();
+        listeHotels.getItems().clear();
+    }
 
     @FXML
     public void initialize() {
@@ -88,7 +101,7 @@ public class Agence {
         } else if (rbCircuit.isSelected()) {
             String continent = cbContinent.getValue();
             if (continent == null) {
-                resultLabel.setText("Choisis un continent pour le circuit.");
+                resultLabel.setText("Choisis un continent pour le circuit");
                 return;
             }
             for (Hotel h : tousLesHotels) {
@@ -106,7 +119,7 @@ public class Agence {
     }
 
     @FXML
-    private void onReserver() {
+    private void onReserve() {
         try {
             String nom = nomClientField.getText();
             int nb = Integer.parseInt(nbPersonnesField.getText());
@@ -155,8 +168,11 @@ public class Agence {
                 reservation.calculPrixTotal(circuit);
             }
 
-            resultLabel.setText("Client " + nom + " - Prix total : "
-                    + reservation.getPrixTotal() + " €");
+            listeClients.getItems().add(client.getNom()+ " - Prix total : " + reservation.getPrixTotal() + " €");
+
+            resultLabel.setText("Client " + nom + " - Prix total : " + reservation.getPrixTotal() + " €");
+
+            viderFormulaire();
 
         } catch (NumberFormatException e) {
             resultLabel.setText("Nombre de personnes invalide.");
