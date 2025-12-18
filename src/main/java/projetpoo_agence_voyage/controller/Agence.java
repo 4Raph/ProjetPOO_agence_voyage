@@ -166,7 +166,7 @@ public class Agence {
                 }
                 for (int i = 0; i < max; i++) {
                     Hotel h = listeHotels.getItems().get(i);
-                    circuit.ajouterEtape(new Sejour(3, h, vol));
+                    circuit.ajouterEtape(new Sejour(nbJ, h, vol));
                 }
                 reservation.calculPrixTotal(circuit);
             }
